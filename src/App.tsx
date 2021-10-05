@@ -3,12 +3,14 @@ import {Item} from './types/item'
 
 import * as C from './App.styles'
 
+import { ListItem } from './components/ListItem'
+
 const App = () => {
   const [list, setList] = useState<Item[]>([
     {
       id: 1,
       name: 'Comprar pão',
-      done: false
+      done: true
     },
     {
       id: 2,
@@ -26,7 +28,7 @@ const App = () => {
         </C.Header>
 
         {list.map((item, index) => (
-          <div>{item.name}</div>
+          <ListItem item={item} key={index}/>
         ))}
       </C.Area>
     </C.Container>
